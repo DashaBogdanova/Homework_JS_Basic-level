@@ -35,6 +35,23 @@
   }
   
   
+  
+    var x=+prompt('x');
+  var n=+prompt('n');
+  (isInteger(n) && n>=1)? alert( pow(x, n)): alert('Введите целую степень, большую 1');
+  function isInteger(num) {
+  return (num ^ 0) === num;
+}
+  function pow(x,n){
+	var pow=x;
+	for (var i=1; i<n; i++){
+	pow*=x;
+ }
+ return pow;
+  }
+  
+
+  
 Задание 3 *:
 - написать функцию sumTo(n), которая для данного n вычисляет сумму чисел от 1 до n, например:
   sumTo(1) = 1
@@ -52,25 +69,21 @@
    function sumTo(n){
 		var sumTo=0;
 		for (var i=n; i>=1; i--){
-			sumTo+=n;
+			sumTo+=i;
 		}
 		return sumTo;
     }
 	alert( sumTo(n));
   
   
-    - через рекурсию, sumTo(n) = n + sumTo(n-1) для n > 1.                                         не работает
+    - через рекурсию, sumTo(n) = n + sumTo(n-1) для n > 1.                                        
 	
-	var n=+prompt('n');
-	var sumTo=0;
-	function sumTo(n){
-		if (n==1){
-			alert(sumTo(n));
-		return;
-		}
-		sumTo+=n;
-		n--;
-	}
+function sumTo(n) {
+  if (n == 1) return 1;
+  return n + sumTo(n - 1);
+}
+
+alert( sumTo(100) );
     - с использованием формулы для суммы арифметической прогрессии.
 	
 	var n=+prompt('n');
