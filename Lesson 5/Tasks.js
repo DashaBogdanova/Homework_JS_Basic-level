@@ -14,6 +14,13 @@ function palindrom(str) {
 }
 palindrom ("шалаш");
 
+function isPolindrom(word) {
+	return word.toLowerCase() === word.toLowerCase().split('').reverse().join('');
+}
+
+isPolindrom('кот');
+
+
 Задача 2:
 - написать функцию, которая будет определять, являются ли переданные в нее слова анаграммами (напр. кот и отк).
 
@@ -46,7 +53,11 @@ function anagram(str1, str2) {
  anagram("кот","отк");
 
 
+function isAnagramm(word1, word2) {
+	return word1.toLowerCase().split('').sort().join('') === word2.toLowerCase().split('').sort().join('');
+}
 
+isAnagramm("кот","отк");
 
 
 Задача 3 *:
